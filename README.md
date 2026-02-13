@@ -1,5 +1,5 @@
 # OverTheWire: Bandit - Writeups & Analysis
-A collection of detailed writeups documenting my journey through **27 levels** of the [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) wargame — a hands-on CTF challenge focused on Linux fundamentals, networking, and security concepts.
+A collection of detailed writeups documenting my journey through **27 levels** of the [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) wargame - a hands-on CTF challenge focused on Linux fundamentals, networking, and security concepts.
 These write-ups go beyond just solutions.
 Each one covers my thought process, mistakes I made along the way, and the concepts I studied to understand *why* things work, not just *how*.
 
