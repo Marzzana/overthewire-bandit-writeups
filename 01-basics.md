@@ -1,6 +1,6 @@
-# Basics — File Navigation & Permissions
+# Basics - File Navigation & Permissions
 
-## Level 0 — SSH Login
+## Level 0 - SSH Login
 The entry point to Bandit. The goal is to connect to the remote machine using SSH.
 ```bash
 ssh bandit0@bandit.labs.overthewire.org -p 2220
@@ -12,11 +12,11 @@ ls
 cat readme
 ```
 The `readme` file contained the password for the next level.
-**Key concepts:** SSH remote login, specifying a port with `-p`.
+\**Key concepts:** SSH remote login, specifying a port with `-p`.
 
 ---
 
-## Level 1 — Dashed Filename
+## Level 1 - Dashed Filename
 The home directory contained a file named `-`. Running `cat -` doesn't work because the shell interprets `-` as a reference to STDIN/STDOUT rather than a filename.
 The solution is to specify the path explicitly:
 ```bash
@@ -24,4 +24,15 @@ ls
 cat ./-
 ```
 By using `./` before the filename, the shell treats it as a file path instead of a special character.
-**Key concepts:** Handling special filenames, relative path notation with `./`.
+\**Key concepts:** Handling special filenames, relative path notation with `./`.
+
+---
+
+## Level 2 - Spaces in Filename
+The file in this level was named `spaces in this filename`, which causes issues because the shell interprets each word as a separate argument.
+The solution is to escape each space with a backslash:
+```bash
+ls
+cat ./spaces\ in\ this\ filename
+```
+\**Key concepts:** Escaping spaces in filenames with `\`.
