@@ -39,3 +39,17 @@ cat ./spaces\ in\ this\ filename
 ```
 
 **Key concepts:** Escaping spaces in filenames with `\`.
+
+---
+
+## Level 3 - Hidden Files
+The home directory contained a folder named `inhere`. Inside it, `ls` showed nothing - the file was hidden.
+In Linux, files starting with `.` are hidden by default. The `-a` flag reveals them:
+```bash
+cd inhere
+ls -a
+cat ...Hiding-From-You
+```
+This revealed a hidden file called `...Hiding-From-You` which contained the password for the next level.
+
+**Key concepts:** Hidden files in Linux, using `ls -a` to reveal them.
