@@ -16,7 +16,7 @@ ls
 cat readme
 ```
 
-The `readme` file contained the password for the next level.
+The `readme` file contained the password for the next level. Password revealed.
 
 **Key concepts:** SSH remote login, specifying a port with `-p`.
 
@@ -33,6 +33,7 @@ cat ./-
 ```
 
 By using `./` before the filename, the shell treats it as a file path instead of a special character.
+The file contained the password for the next level. Password revealed.
 
 **Key concepts:** Handling special filenames, relative path notation with `./`.
 
@@ -47,6 +48,8 @@ The solution is to escape each space with a backslash:
 ls
 cat ./spaces\ in\ this\ filename
 ```
+
+The file contained the password for the next level. Password revealed.
 
 **Key concepts:** Escaping spaces in filenames with `\`.
 
@@ -65,4 +68,25 @@ cat ...Hiding-From-You
 
 This revealed a hidden file called `...Hiding-From-You` which contained the password for the next level.
 
+The hidden file contained the password for the next level. Password revealed.
+
 **Key concepts:** Hidden files in Linux, using `ls -a` to reveal them.
+
+---
+
+## Level 4 - Finding Human-Readable Files
+
+The home directory contained a folder named `inhere`. 
+
+```bash
+cd inhere
+ls
+```
+
+Inside it, there were 9 files, all with names starting with `-`.
+
+Using the `./` trick from Level 1, I used `cat` on each file until I found the one containing readable text. Most files contained garbled binary output.
+
+Only one file contained human-readable text - and that was the password for the next level. Password revealed.
+
+**Key concepts:** Navigating multiple dashed filenames, identifying human-readable content among binary files.
