@@ -19,10 +19,10 @@ Each one covers my thought process, mistakes I made along the way, and the conce
 ## Writeups
 | File | Levels | Theme |
 |------|--------|-------|
-| [01-basics.md](levels/01-basics.md) | 0–5 | File navigation, permissions, hidden files |
-| [02-text-processing.md](levels/02-text-processing.md) | 6–12 | Grep, piping, encoding, compression |
-| [03-networking.md](levels/03-networking.md) | 13–17 | SSH keys, netcat, SSL, port scanning |
-| [04-privilege-escalation.md](levels/04-privilege-escalation.md) | 18–27 | Setuid, cron exploitation, restricted shells, scripting |
+| [01-basics.md](01-basics.md) | 0–6 | File navigation, permissions, hidden files |
+| [02-text-processing.md](02-text-processing.md) | 6–12 | Grep, piping, encoding, compression |
+| [03-networking.md](03-networking.md) | 13–17 | SSH keys, netcat, SSL, port scanning |
+| [04-privilege-escalation.md](04-privilege-escalation.md) | 18–27 | Setuid, cron exploitation, restricted shells, scripting |
 
 
 ## About
