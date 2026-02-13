@@ -6,7 +6,6 @@ The entry point to Bandit. The goal is to connect to the remote machine using SS
 ssh bandit0@bandit.labs.overthewire.org -p 2220
 ```
 The `-p` flag specifies the port to connect through — in this case, port 2220. After running the command, I entered the password `bandit0` to log in.
-
 Once inside, I explored the environment:
 ```bash
 ls
@@ -14,3 +13,15 @@ cat readme
 ```
 The `readme` file contained the password for the next level.
 **Key concepts:** SSH remote login, specifying a port with `-p`.
+
+---
+
+## Level 1 — Dashed Filename
+The home directory contained a file named `-`. Running `cat -` doesn't work because the shell interprets `-` as a reference to STDIN/STDOUT rather than a filename.
+The solution is to specify the path explicitly:
+```bash
+ls
+cat ./-
+```
+By using `./` before the filename, the shell treats it as a file path instead of a special character.
+**Key concepts:** Handling special filenames, relative path notation with `./`.
