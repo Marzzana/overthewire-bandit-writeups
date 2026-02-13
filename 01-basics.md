@@ -100,6 +100,8 @@ I went through each subdirectory one by one, using `ls -a -l` to view all files,
 
 Eventually, I found the file inside `maybehere07`. Password revealed.
 
+Interestingly, the password itself included a bunch of trailing spaces - a small but important detail to catch.
+
 **Key concepts:** Using `ls -l` to inspect file sizes, navigating nested directories, `cd ..` to move up.
 
 ---
