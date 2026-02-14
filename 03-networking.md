@@ -78,3 +78,39 @@ Password revealed.
 
 **Key concepts:** Socket inspection with `ss`, iteratively filtering output with chained commands, setting file permissions with `chmod 600` for private keys.
 
+---
+
+## Level 20 - Client-Server Communication
+
+Two whole days spent on this one, and 99% of the thinking was in the completely wrong direction.
+
+The home directory contained a binary called `suconnect`. Given a port number, it connects to that port, reads a line, and if the line matches the previous level's password, it transmits the next password.
+
+So I started thinking - okay, I need to find which port has the thing that gives me the password. I did a HUGE amount of overthinking.  
+I scanned for open ports using `nmap` and `nc`:
+```bash
+nmap -sV localhost
+nc -zv localhost 2>&1 | grep succeeded
+```
+
+I found port 12345, tried it with `suconnect`, and it told me the password matched and that it was sending the next one. Great, right? NO. Where is it sending the password to?  
+This was a decoy, and it completely set me off in the wrong direction.  
+I spent two days trying to figure out where the password was going - listeners on other ports, intercepting packets, controlling processes - nothing worked.
+
+A great lesson came out of this: **if it's taking too long, release the idea. The assumptions you built on are probably wrong. Rethink the whole problem.**
+
+The real answer was painfully simple. `suconnect` didn't care which port it got - it just acted as a client. All it needed was a server. MY server.  
+I created my own listener on a port of my choosing, then ran `suconnect` pointing at that port:
+```bash
+nc -l localhost 25000
+./suconnect 25000
+```
+
+I used `tmux` to split into separate terminals - one running the listener, the other running `suconnect` - so I could interact with both sides simultaneously.
+
+And then both of them just sat there, waiting. The listener waited for input, and `suconnect` waited to read. I typed the previous level's password into the listener - immediately `suconnect` confirmed the match and transmitted the next password right back to the listener. Password revealed.
+
+A side note on the port scanning command - `nc -zv` outputs to stderr (stream 2), not stdout (stream 1). Since `grep` only reads from stdout, I had to redirect stderr to stdout with `2>&1`. The `&` tells the shell that `1` is the stdout stream, not a filename.
+
+**Key concepts:** Port scanning with `nmap` and `nc`, creating listeners with `nc -l`, `tmux` for managing multiple terminals, understanding stdin/stdout/stderr streams (0, 1, 2), stream redirection with `2>&1`.
+
