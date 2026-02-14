@@ -90,9 +90,20 @@ The `data.txt` file was a hex dump of a file that had been compressed multiple t
 
 The key insight was learning that hex dumps contain compression signatures at the start of the file - `1F 8B 08` for gzip, `42 5A 68` for bzip2.  
 These stamps tell you which decompression command is needed to peel back each layer.
+To decompress with gzip:
+```bash
+gzip -d filename.gz
+```
+To decompress with bzip2:
+```bash
+bzip2 -d filename.bz2
+```
+
+The `-d` flag is for decompression. To compress, simply run the commands without it (`gzip filename`, `bzip2 filename`).
 
 After several rounds of decompressing, a new problem appeared - they started hiding a decompressible file inside an undecompressible one. I had to manually extract the relevant portion using `cat > newfilename.txt`, edit it with `nano`, and then decompress again.
 
-This happened multiple times. Layer after layer of compression, each one requiring identification and the right tool to unwrap. Eventually, after what felt like forever - password revealed.
+This happened multiple times. Layer after layer of compression, each one requiring identification and the right tool to unwrap.  
+Eventually, after what felt like forever - password revealed.
 
 **Key concepts:** Hex dumps, compression signatures (gzip, bzip2), multi-layered decompression, manual file extraction with `cat >` and `nano`.
