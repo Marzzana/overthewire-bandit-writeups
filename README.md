@@ -22,7 +22,7 @@ Each one covers my thought process, mistakes I made along the way, and the conce
 | [01-basics.md](01-basics.md) | 0–6 | File navigation, permissions, hidden files |
 | [02-text-processing.md](02-text-processing.md) | 7–12, 17 | Grep, piping, encoding, compression |
 | [03-networking.md](03-networking.md) | 13–16, 20 | SSH keys, netcat, SSL, port scanning |
-| [04-privilege-escalation.md](04-privilege-escalation.md) | 18–27 | Setuid, cron exploitation, restricted shells, scripting |
+| [04-privilege-escalation.md](04-privilege-escalation.md) | 18–19, 21-26 | Setuid, cron exploitation, restricted shells, scripting |
 
 
 ## About
