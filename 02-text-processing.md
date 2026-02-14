@@ -20,8 +20,7 @@ The home directory contained a file called `data.txt`, full of duplicate lines. 
 sort data.txt | uniq -u
 ```
 
-This took some reading to understand.  
-`sort` groups identical lines together.   
+This took some reading to understand. `sort` groups identical lines together.   
 The `|` operator pipes that sorted output into `uniq -u`, which only prints lines that appear once.  
 The `uniq` command has other useful options too - `-d` prints only the duplicate lines, and `-c` precedes each line with a count of how many times it occurred. What helped me most here was reading about the difference between piping (passing output between programs) and redirection (passing output to files). 
 
