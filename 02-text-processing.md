@@ -107,3 +107,22 @@ This happened multiple times. Layer after layer of compression, each one requiri
 Eventually, after what felt like forever - password revealed.
 
 **Key concepts:** Hex dumps, compression signatures (gzip, bzip2), multi-layered decompression, manual file extraction with `cat >` and `nano`.
+
+---
+
+## Level 17 - Comparing Files with Diff
+
+This was relatively easy. The home directory contained two files - `passwords.old` and `passwords.new`.  
+The password was the line that had changed between them.
+
+The `diff` command compares two files line by line:
+```bash
+diff passwords.new passwords.old
+```
+
+The output uses `<` to indicate lines from the first file and `>` for lines from the second. It also shows a format like `2,3c2,4` - meaning "change lines 2–3 from file 1 with lines 2–4 from file 2." Other actions include `a` for add and `d` for delete.
+
+I took the line starting with `<`, since that was the changed line in `passwords.new` - the new password.  
+Password revealed.
+
+**Key concepts:** Comparing files with `diff`, understanding diff output notation (`<`, `>`, `a`/`c`/`d` actions).
