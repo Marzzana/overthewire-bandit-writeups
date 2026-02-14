@@ -89,7 +89,7 @@ This was the hardest one yet by far.
 The `data.txt` file was a hex dump of a file that had been compressed multiple times with different tools.
 
 The key insight was learning that hex dumps contain compression signatures at the start of the file - `1F 8B 08` for gzip, `42 5A 68` for bzip2.  
-These stamps tell you which decompression command is needed to peel back each layer.
+These stamps tell you which decompression command is needed to peel back each layer.  
 To decompress with gzip:
 ```bash
 gzip -d filename.gz
