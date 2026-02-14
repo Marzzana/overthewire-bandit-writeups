@@ -70,7 +70,8 @@ Password revealed.
 This one was cool honestly. The `data.txt` file had been encoded with ROT13 - a simple substitution cipher that shifts each letter 13 places in the alphabet.  
 For example, `a` becomes `n`, and `z` becomes `m`.
 
-The `tr` (translate) command turned out to be extremely powerful for this. It works by mapping one set of characters to another: `tr [SET1] [SET2]`.  
+The `tr` (translate) command turned out to be extremely powerful for this. It works by mapping one set of characters to another:  
+`tr [SET1] [SET2]`.  
 I realized that in ROT13, `a-m` maps to `n-z` and `n-z` maps back to `a-m`:
 ```bash
 cat data.txt | tr 'a-m,n-z' 'n-z,a-m' | tr 'A-M,N-Z' 'N-Z,A-M'
