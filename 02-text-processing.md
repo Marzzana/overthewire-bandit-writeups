@@ -43,3 +43,40 @@ strings data.txt | grep '='
 This narrowed the output down to only lines containing `=` signs, making the password easy to spot. Password revealed.
 
 **Key concepts:** Using `strings` to extract readable text from binary files, chaining commands with pipes.
+
+---
+
+## Level 10 - Base64 Decoding
+
+This level required some reading about Base64.  
+Base64 is an encoding scheme that converts binary data into text, useful for systems that can only handle text input.  
+It works by taking a block of 3 bytes (24 bits), splitting it into 4 blocks of 6 bits, and assigning each block a character from a set of 64 characters (A-Z, a-z, 0-9, +, /, and = for padding).
+
+An interesting side note - this encoding increases file size by about 33%. We start with 3 bytes (24 bits), and end up with 4 characters of 8 bits each (32 bits). So we go from 3 bytes to 4 bytes, an increase of a third.
+
+The `data.txt` file contained text that had already been encoded in Base64. Decoding it was straightforward with the `-d` flag:
+```bash
+base64 -d data.txt
+```
+
+Password revealed.
+
+**Key concepts:** Base64 encoding/decoding, understanding how encoding increases file size.
+
+---
+
+## Level 11 - ROT13 Cipher
+
+This one was cool honestly. The `data.txt` file had been encoded with ROT13 - a simple substitution cipher that shifts each letter 13 places in the alphabet.  
+For example, `a` becomes `n`, and `z` becomes `m`.
+
+The `tr` (translate) command turned out to be extremely powerful for this. It works by mapping one set of characters to another: `tr [SET1] [SET2]`.  
+I realized that in ROT13, `a-m` maps to `n-z` and `n-z` maps back to `a-m`:
+```bash
+cat data.txt | tr 'a-m,n-z' 'n-z,a-m' | tr 'A-M,N-Z' 'N-Z,A-M'
+```
+
+The sets have to be in alphabetical order - writing `n-m` would throw an error, so they need to be split into `n-z` and `a-m`. The second `tr` handles uppercase letters.  
+Technically the second pipe wasn't necessary, but I did it out of careful noobiness. Password revealed.
+
+**Key concepts:** ROT13 cipher, character translation with `tr`, chaining multiple translations.
