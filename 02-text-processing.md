@@ -80,3 +80,4 @@ The sets have to be in alphabetical order - writing `n-m` would throw an error, 
 Technically the second pipe wasn't necessary, but I did it out of careful noobiness. Password revealed.
 
 **Key concepts:** ROT13 cipher, character translation with `tr`, chaining multiple translations.
+
