@@ -24,7 +24,7 @@ So simple, yet I couldn't grasp it for a while.
 This required a lot of reading about `setuid` and `setgid`. In short, `setuid` is a special permission bit that replaces the `x` in a file's permissions with an `s`.  
 When set on an executable, it means anyone who runs that file temporarily gets the privileges of the file's owner.
 
-The home directory contained a binary called `bandit20-do`. Running it gave a deceptively vague hint: "Run a command as another user. Example: `./bandit20-do id`".  
+The home directory contained a binary called `bandit20-do`. Running it gave a deceptively vague hint: "Run a command as another user. "Example: `./bandit20-do id`".  
 The `id` in the example is NOT related to the solution - it's just an example command! which is confusing when the whole level revolves around users and IDs.
 
 Once it clicked, I realized the binary lets you run any single command as the bandit20 user:
