@@ -219,7 +219,7 @@ And just like that - password revealed. The real challenge was getting here.
 
 ---
 
-## Level 32-— The Uppercase Shell
+## Level 32 - The Uppercase Shell
 
 This level was brutal.
 
