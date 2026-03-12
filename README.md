@@ -13,6 +13,8 @@ Each one covers my thought process, mistakes I made along the way, and the conce
 
 **Networking:** SSH (password & key-based authentication), `nc`/`ncat`/`socat`, TLS/SSL connections, port scanning with `nmap`, socket inspection with `ss`, localhost communication, automated server interaction using `coproc`.
 
+**Git Internals:** Cloning via SSH, object model (blobs, trees, commits), unpacking packed files, inspecting objects with `git cat-file`, `.gitignore`, pushing changes to remote bare repositories.
+
 **Privilege Escalation & Security:** `setuid`/`setgid` exploitation, cron job analysis, restricted shell escapes (`more` -> `vi` -> `bash`), script injection, brute-force automation.
 
 
