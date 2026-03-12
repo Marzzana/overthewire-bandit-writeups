@@ -1,5 +1,5 @@
 # OverTheWire: Bandit - Writeups & Analysis
-A collection of detailed writeups documenting my journey through **27 levels** of the [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) wargame - a hands-on CTF challenge focused on Linux fundamentals, networking, and security concepts.
+A collection of detailed writeups documenting my journey through **33 levels** of the [OverTheWire Bandit](https://overthewire.org/wargames/bandit/) wargame - a hands-on CTF challenge focused on Linux fundamentals, networking, and security concepts.
 These write-ups go beyond just solutions.
 Each one covers my thought process, mistakes I made along the way, and the concepts I studied to understand *why* things work, not just *how*.
 
@@ -19,10 +19,11 @@ Each one covers my thought process, mistakes I made along the way, and the conce
 ## Writeups
 | File | Levels | Theme |
 |------|--------|-------|
-| [01-basics.md](01-basics.md) | 0–6 | File navigation, permissions, hidden files |
-| [02-text-processing.md](02-text-processing.md) | 7–12, 17 | Grep, piping, encoding, compression |
-| [03-networking.md](03-networking.md) | 13–16, 20 | SSH keys, netcat, SSL, port scanning |
-| [04-privilege-escalation.md](04-privilege-escalation.md) | 18–19, 21-26 | Setuid, cron exploitation, restricted shells, scripting |
+| [01-basics.md](levels/01-basics.md) | 0–6 | File navigation, permissions, hidden files |
+| [02-text-processing.md](levels/02-text-processing.md) | 7–12, 17 | Grep, piping, encoding, compression |
+| [03-networking.md](levels/03-networking.md) | 13–16, 20 | SSH keys, netcat, SSL, port scanning |
+| [04-privilege-escalation.md](levels/04-privilege-escalation.md) | 18–19, 21–26, 32 | Setuid, cron exploitation, restricted shells, scripting |
+| [05-git.md](levels/05-git.md) | 27–31 | Git internals, cloning, version control |
 
 
 ## About
