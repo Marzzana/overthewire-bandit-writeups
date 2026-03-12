@@ -66,8 +66,6 @@ Password revealed.
 
 ---
 
----
-
 ## Level 22 - Reverse Engineering a Cron Script
 
 Very fun level overall. Same logical structure as the previous one - rolling around from directory to directory, file to file, following the trail. But this time, the interesting part was understanding the script itself.
@@ -219,3 +217,25 @@ And just like that - password revealed. The real challenge was getting here.
 
 **Key concepts:** Setuid binary exploitation, leveraging a previous shell escape to access the next level.
 
+---
+
+## Level 32-— The Uppercase Shell
+
+This level was brutal.
+
+When I logged in, a shell called "UPPERCASE" appeared. Anything I typed just errored out with "permission denied" - I had no idea why at first.
+
+I spent a long time on this. I read about shell escaping techniques, environment variables, all kinds of approaches - nothing worked. Eventually I got a hint that a shell can refer to itself, which led me to discover a tiny detail that almost no source talks about: the `$0` shell variable.
+
+`$0` holds the name of the current shell. If the shell is `bash`, then `$0` literally stands for `bash`.
+```bash
+$0
+```
+
+One command. That's it. The uppercase shell was defeated, and I was in a proper shell. From there, getting the password was straightforward. Password revealed.
+
+In hindsight, I realized what the uppercase shell was actually doing - it was taking whatever I typed, converting it to uppercase, and passing it to `sh -c` for execution, which is why every command failed, since there are no uppercase Linux commands. And `$0` bypassed it because it doesn't contain any letters, so there was nothing to convert.
+
+I didn't get the amazing aha moment I was looking for since I needed a hint, but I studied a lot along the way - shell escaping methods, environment variables, and a deeper understanding of the terminal space. I'm happy with what I took from this level.
+
+**Key concepts:** Shell escaping, the `$0` variable, understanding how shell scripts process input.
